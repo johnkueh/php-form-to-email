@@ -4,11 +4,14 @@ php-form-to-email
 Easy PHP Form to Email Script.
 
 1. Create a form with action pointing to the emailer.php file, and method="get". See example below:
-<form method="get" action="emailer.php">
-</form>
-
+<pre>
+	<form method="get" action="emailer.php">
+	</form>
+</pre>
 2. Create as many input fields as you want, each with a 'name' tag. See example below:
-<input name="Email" />
+<pre>
+	<input name="Email" />
+</pre>
 
 3. Put a submit button on the form.
 
