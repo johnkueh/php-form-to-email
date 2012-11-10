@@ -7,7 +7,7 @@ Easy PHP Form to Email Script.
 	`<form method="get" action="emailer.php">
 	</form>`
 
-2. Create as many input fields as you want, each with a 'name' tag. See example below:
+2. Create as many input fields as you want, each with a 'name' tag. See example:
 	`<input name="Email" />`
 
 
