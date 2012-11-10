@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<style>
+		.error { color:red; }
+	</style>
+</head>
+
+<body>
+
+<h2>Basic Form</h2>
+<form action="emailer.php" method="get">
+	<label>Name</label><br />
+	<input name="Name" type="text" value="John Kueh" /><br />
+	<label>Email</label><br />
+	<input name="Email" type="email" value="me@yoongfook.com" /><br />
+	<label>Message</label><br />
+	<textarea name="Message" type="text" >This is the contact message</textarea><br />
+	<button type="submit">Submit</button>
+</form>
+
+
+<h2>AJAX Validation and Submission</h2>
+<form id="form" action="emailer.php" method="get">
+	<label>Name</label><br />
+	<input name="Name" class="required" type="text" /><br />
+	<label>Email</label><br />
+	<input name="Email" class="required email" type="email" /><br />
+	<label>Message</label><br />
+	<textarea name="Message" class="required" type="text" ></textarea><br />
+	<button type="submit">Submit</button>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+<script src="js/form-plugin.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#form").validate({
+		submitHandler: function(form) {
+    	$(form).ajaxSubmit(function(data){
+    		if(data = 'success') {
+    			$("#form").fadeOut();
+    			$("#form").after('<h4>Thank you for your interest. <br />We will get back to you soon</h4>');
+    		}
+    	});
+   }
+	});
+})
+</script>
+
+</body>
+</html>
